@@ -64,10 +64,15 @@ public class FizzBuzzTest {
 		Assert.assertEquals("Buzz", fb.getOutput(10));
 	}
 	
-	
 	@Test
 	public void fifteenthNumber(){
 		FizzBuzz fb = new FizzBuzz(multiple1,multiple2);
 		Assert.assertEquals("FizzBuzz", fb.getOutput(15) );
+	}
+	
+	@Test
+	public void contains3(){
+		FizzBuzz fb = new FizzBuzz(multiple1,multiple2);
+		Assert.assertEquals("Fizz", fb.getOutput(13));
 	}
 }

@@ -11,18 +11,11 @@ public class FizzBuzz {
 				
 	}
 	
-	
 	public String getOutput(int number){
 		
 		String output= "";
-		
-		if ( number % this.multiple1 == 0 ){
-			output+= "Fizz";
-		}
-		
-		if ( number % this.multiple2 == 0 ){
-			output+= "Buzz";
-		}
+		output+= convertInput(number, multiple1, "Fizz");
+		output+= convertInput(number, multiple2, "Buzz");
 		
 		if (output.equals("")){
 			return ""+number;
@@ -30,6 +23,14 @@ public class FizzBuzz {
 			return output;
 		}
 		
+	}
+	
+	private String convertInput( int inputNumber, int factor, String output ){
+		String numberString = ""+inputNumber;
+		if ( inputNumber % factor == 0 || numberString.contains(factor+"")){
+			return output;
+		}
+		return "";
 	}
 	
 	public void printAllOutputs(int limit){
